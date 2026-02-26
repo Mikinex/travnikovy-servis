@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trávníkový Servis Brno | ŠENA PROFI - Profesionální péče o trávník</title>
+  <meta name="description" content="Profesionální péče o trávník v Brně a okolí. Franchíza ŠENA PROFI. Údržba, regenerace, vertikutace, aerifikace. Bez chemie, s 17+ lety zkušeností.">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #036400;
+      --green-mid: #6da84b;
+      --green-light: #e8f5e2;
+      --gold: #d1aa11;
+      --dark: #292929;
+      --light: #f5f5f5;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Open Sans',sans-serif; color:#333; }
+
+    /* ── HEADER ─────────────────────── */
+    .topbar { background:var(--dark); color:#aaa; font-size:.78rem; padding:6px 0; }
+    .topbar a { color:#ccc; text-decoration:none; }
+    .topbar a:hover { color:#fff; }
+
+    .navbar-main { background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.08); position:sticky; top:0; z-index:100; }
+    .navbar-main .nav-link { color:#333; font-weight:600; font-size:.9rem; padding:.6rem 1rem; transition:.2s; }
+    .navbar-main .nav-link:hover, .navbar-main .nav-link.active { color:var(--green-dark); }
+    .logo-text { font-weight:800; font-size:1.4rem; color:var(--green-dark); text-decoration:none; }
+    .logo-text span { color:var(--green-mid); }
+    .logo-sub { font-size:.65rem; color:#888; text-transform:uppercase; letter-spacing:1.5px; }
+
+    /* ── HERO ──────────────────────── */
+    .hero {
+      background:linear-gradient(135deg, rgba(3,100,0,.85), rgba(109,168,75,.7)), url('https://images.unsplash.com/photo-1558635924-b60e7d9de903?w=1600&q=80') center/cover;
+      min-height:520px; display:flex; align-items:center; color:#fff;
+    }
+    .hero h1 { font-size:2.8rem; font-weight:800; line-height:1.15; text-shadow:0 2px 8px rgba(0,0,0,.3); }
+    .hero .lead { font-size:1.15rem; opacity:.92; margin:16px 0 28px; max-width:520px; }
+    .btn-sena { background:var(--green-dark); color:#fff; border:none; font-weight:700; padding:12px 32px; border-radius:6px; font-size:.95rem; transition:.3s; }
+    .btn-sena:hover { background:var(--green-mid); color:#fff; transform:translateY(-2px); box-shadow:0 4px 16px rgba(3,100,0,.3); }
+    .btn-gold { background:var(--gold); color:#fff; }
+    .btn-gold:hover { background:#c49a00; color:#fff; }
+
+    /* ── BENEFITS ──────────────────── */
+    .benefits { background:var(--green-dark); padding:32px 0; }
+    .benefit-item { text-align:center; color:#fff; padding:16px; }
+    .benefit-item i { font-size:2rem; color:var(--green-mid); margin-bottom:8px; }
+    .benefit-item h6 { font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.5px; }
+
+    /* ── SECTIONS ──────────────────── */
+    section { padding:60px 0; }
+    .section-title { font-weight:800; font-size:1.8rem; color:var(--green-dark); margin-bottom:12px; }
+    .section-sub { color:#777; font-size:1rem; margin-bottom:40px; }
+    .bg-light-green { background:var(--green-light); }
+
+    /* ── SERVICE CARDS ─────────────── */
+    .svc-card { background:#fff; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,.06); padding:28px; height:100%; transition:.3s; border:2px solid transparent; }
+    .svc-card:hover { border-color:var(--green-mid); transform:translateY(-4px); box-shadow:0 8px 28px rgba(3,100,0,.12); }
+    .svc-card i { font-size:2.2rem; color:var(--green-dark); margin-bottom:14px; }
+    .svc-card h5 { font-weight:700; color:var(--green-dark); }
+    .svc-card .price { font-weight:800; color:var(--green-mid); font-size:1.1rem; margin-top:12px; }
+
+    /* ── ABOUT ─────────────────────── */
+    .about-img { border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,.12); }
+    .check-list { list-style:none; padding:0; }
+    .check-list li { padding:6px 0; font-size:.95rem; }
+    .check-list li i { color:var(--green-mid); margin-right:8px; }
+
+    /* ── PROCESS ────────────────────── */
+    .step { text-align:center; padding:20px; }
+    .step-num { width:48px; height:48px; border-radius:50%; background:var(--green-dark); color:#fff; font-weight:800; font-size:1.2rem; display:inline-flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .step h6 { font-weight:700; }
+
+    /* ── TESTIMONIALS ──────────────── */
+    .testimonial { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,.06); height:100%; }
+    .testimonial .stars { color:var(--gold); font-size:1rem; }
+    .testimonial p { font-style:italic; color:#555; margin:12px 0; }
+    .testimonial .author { font-weight:700; color:var(--green-dark); font-size:.85rem; }
+
+    /* ── CTA ────────────────────────── */
+    .cta-section {
+      background:linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      color:#fff; padding:60px 0; text-align:center;
+    }
+    .cta-section h2 { font-weight:800; }
+
+    /* ── CONTACT ────────────────────── */
+    .contact-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 2px 16px rgba(0,0,0,.06); }
+    .contact-card i { color:var(--green-dark); font-size:1.3rem; }
+
+    /* ── FOOTER ─────────────────────── */
+    footer { background:var(--dark); color:#999; padding:40px 0 20px; font-size:.85rem; }
+    footer h6 { color:#fff; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:.78rem; margin-bottom:14px; }
+    footer a { color:#aaa; text-decoration:none; }
+    footer a:hover { color:var(--green-mid); }
+    footer .copy { border-top:1px solid #444; padding-top:16px; margin-top:24px; }
+
+    /* ── RESPONSIVE ─────────────────── */
+    @media(max-width:768px){
+      .hero h1 { font-size:1.8rem; }
+      .hero { min-height:380px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <a href="tel:+420608373637"><i class="bi bi-telephone-fill me-1"></i>+420 608 37 36 37</a>
+        <span class="mx-2">|</span>
+        <a href="mailto:brno@travnikovyservis.cz"><i class="bi bi-envelope-fill me-1"></i>brno@travnikovyservis.cz</a>
+      </div>
+      <div>
+        <a href="https://www.sena.cz" target="_blank" class="me-3"><i class="bi bi-shop me-1"></i>E-shop ŠENA</a>
+        <a href="https://www.sena.cz/franziza-sena/" target="_blank"><i class="bi bi-info-circle me-1"></i>Franchíza</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar-main">
+    <div class="container d-flex align-items-center justify-content-between py-2">
+      <div>
+        <a href="#" class="logo-text">ŠENA<span>PROFI</span></a>
+        <div class="logo-sub">Trávníkový servis Brno</div>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-1">
+        <a href="#sluzby" class="nav-link">Služby</a>
+        <a href="#o-nas" class="nav-link">O nás</a>
+        <a href="#jak-to-funguje" class="nav-link">Jak to funguje</a>
+        <a href="#reference" class="nav-link">Reference</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+        <a href="#kontakt" class="btn btn-sena btn-sm ms-2">Nezávazná poptávka</a>
+      </div>
+      <button class="btn d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobNav">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+    </div>
+    <div class="collapse d-md-none" id="mobNav">
+      <div class="container pb-3">
+        <a href="#sluzby" class="nav-link">Služby</a>
+        <a href="#o-nas" class="nav-link">O nás</a>
+        <a href="#jak-to-funguje" class="nav-link">Jak to funguje</a>
+        <a href="#reference" class="nav-link">Reference</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <p class="mb-2" style="font-size:.85rem;text-transform:uppercase;letter-spacing:2px;opacity:.8">
+            <i class="bi bi-geo-alt-fill me-1"></i>Brno a okolí
+          </p>
+          <h1>Profesionální<br>péče o trávník<br>v Brně</h1>
+          <p class="lead">Dokonalý trávník není náhoda. Svěřte svou zahradu odborníkům s 17+ lety praxe. Bez chemie, s láskou k trávě.</p>
+          <a href="#kontakt" class="btn btn-sena me-2">
+            <i class="bi bi-calendar-check me-2"></i>Objednat službu
+          </a>
+          <a href="#sluzby" class="btn btn-outline-light">
+            <i class="bi bi-arrow-down me-2"></i>Naše služby
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <div class="benefits">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <div class="benefit-item">
+            <i class="bi bi-leaf"></i>
+            <h6>Bez chemie</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="benefit-item">
+            <i class="bi bi-award"></i>
+            <h6>Franchíza ŠENA</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="benefit-item">
+            <i class="bi bi-clock-history"></i>
+            <h6>17+ let praxe</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="benefit-item">
+            <i class="bi bi-geo-alt"></i>
+            <h6>Brno a okolí</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Služby -->
+  <section id="sluzby">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Naše služby</h2>
+        <p class="section-sub">Kompletní péče o váš trávník od A do Z</p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-scissors"></i>
+            <h5>Pravidelná údržba trávníku</h5>
+            <p class="text-muted small">Sečení, hnojení, zálivka, odplevelení. Celoroční péče podle ročního plánu šitého na míru vaší zahradě.</p>
+            <div class="price">od 1 999 Kč / návštěva</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-arrow-repeat"></i>
+            <h5>Regenerace trávníku</h5>
+            <p class="text-muted small">Kompletní obnova zničeného nebo zanedbaného trávníku. Vertikutace, dosev, hnojení, válcování.</p>
+            <div class="price">od 5 999 Kč</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-moisture"></i>
+            <h5>Aerifikace PROFI</h5>
+            <p class="text-muted small">Provzdušnění půdy dutými nebo plnými hroty. Zlepšení kořenového systému a propustnosti.</p>
+            <div class="price">od 5 999 Kč</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-flower1"></i>
+            <h5>Založení nového trávníku</h5>
+            <p class="text-muted small">Anglický trávník na klíč. Příprava půdy, setí prémiových směsí, první péče. Včetně záruky.</p>
+            <div class="price">od 1 999 Kč</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-droplet-half"></i>
+            <h5>Kalibrace závlahy</h5>
+            <p class="text-muted small">Odborné nastavení automatického zavlažovacího systému pro rovnoměrné pokrytí a úsporu vody.</p>
+            <div class="price">od 3 999 Kč</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="svc-card">
+            <i class="bi bi-chat-dots"></i>
+            <h5>Konzultace na místě</h5>
+            <p class="text-muted small">90minutová osobní konzultace s trávníkářem. Rozbor stavu, plán péče, doporučení produktů.</p>
+            <div class="price">od 4 499 Kč</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- O nás -->
+  <section id="o-nas" class="bg-light-green">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=700&q=80" alt="Péče o trávník" class="img-fluid about-img">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title">Franchíza ŠENA PROFI</h2>
+          <p class="text-muted mb-4">Jsme brněnská pobočka celostátní sítě ŠENA PROFI, založené Ing. Tomášem Šenou. Přinášíme profesionální péči o trávníky do Brna a okolí s know-how ověřeným tisíci spokojených zákazníků od roku 2006.</p>
+          <ul class="check-list">
+            <li><i class="bi bi-check-circle-fill"></i>Certifikované postupy ŠENA PROFI</li>
+            <li><i class="bi bi-check-circle-fill"></i>Ekologický přístup bez chemie</li>
+            <li><i class="bi bi-check-circle-fill"></i>Profesionální technika a prémiové přípravky</li>
+            <li><i class="bi bi-check-circle-fill"></i>Individuální plán péče pro každou zahradu</li>
+            <li><i class="bi bi-check-circle-fill"></i>Celoroční servis – jaro, léto, podzim, zima</li>
+            <li><i class="bi bi-check-circle-fill"></i>Garance spokojenosti</li>
+          </ul>
+          <a href="#kontakt" class="btn btn-sena mt-3"><i class="bi bi-telephone me-2"></i>Kontaktujte nás</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak to funguje -->
+  <section id="jak-to-funguje">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Jak to funguje</h2>
+        <p class="section-sub">Od první poptávky po dokonalý trávník ve 4 krocích</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h6>Poptávka</h6>
+            <p class="text-muted small">Vyplníte formulář nebo zavoláte. Řeknete nám o své zahradě.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step">
+            <div class="step-num">2</div>
+            <h6>Konzultace</h6>
+            <p class="text-muted small">Přijedeme, zhodnotíme stav trávníku a navrhneme řešení.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step">
+            <div class="step-num">3</div>
+            <h6>Realizace</h6>
+            <p class="text-muted small">Provedeme domluvené práce profesionální technikou.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step">
+            <div class="step-num">4</div>
+            <h6>Péče</h6>
+            <p class="text-muted small">Nabídneme celoroční plán údržby pro trvalé výsledky.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reference -->
+  <section id="reference" class="bg-light-green">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Co říkají naši zákazníci</h2>
+        <p class="section-sub">Stovky spokojených zahrad v Brně a okolí</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Trávník vypadá fantasticky. Po regeneraci je to úplně jiná zahrada. Profesionální přístup, vše bez chemie."</p>
+            <div class="author">Jana K., Brno-Bystrc</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Konečně někdo kdo rozumí trávníkům. Poradili, provedli aerifikaci a výsledek je vidět. Doporučuji!"</p>
+            <div class="author">Martin P., Kuřim</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Celoroční údržba mi ušetřila spoustu času. Trávník je zelenější než u sousedů. Díky ŠENA tým!"</p>
+            <div class="author">Petra S., Brno-Královo Pole</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Chcete krásný trávník bez starostí?</h2>
+      <p class="mt-2 mb-4 opacity-75">Napište nám nebo zavolejte. Poradíme zdarma a připravíme nezávaznou nabídku.</p>
+      <a href="#kontakt" class="btn btn-gold btn-lg"><i class="bi bi-envelope me-2"></i>Nezávazná poptávka</a>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="section-sub">Ozvěte se nám, rádi poradíme</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact-card h-100">
+            <h5 class="fw-bold mb-4" style="color:var(--green-dark)">ŠENA PROFI – Brno</h5>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-geo-alt-fill mt-1"></i>
+              <div>
+                <strong>Trávníkový servis Brno</strong><br>
+                <span class="text-muted">Brno a okolí (do 30 km)</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-telephone-fill mt-1"></i>
+              <div>
+                <a href="tel:+420608373637" class="text-decoration-none fw-semibold">+420 608 37 36 37</a><br>
+                <span class="text-muted small">Po-Pá 8:00 – 18:00</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-envelope-fill mt-1"></i>
+              <div>
+                <a href="mailto:brno@travnikovyservis.cz" class="text-decoration-none fw-semibold">brno@travnikovyservis.cz</a>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <i class="bi bi-globe mt-1"></i>
+              <div>
+                <a href="https://www.travnikovyservis.cz" class="text-decoration-none fw-semibold">www.travnikovyservis.cz</a>
+              </div>
+            </div>
+            <hr>
+            <p class="text-muted small mb-2">Součást franchízové sítě</p>
+            <a href="https://www.sena.cz" target="_blank" class="fw-bold text-decoration-none" style="color:var(--green-dark)">
+              <i class="bi bi-shop me-1"></i>www.sena.cz
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-card h-100">
+            <h5 class="fw-bold mb-4" style="color:var(--green-dark)">Nezávazná poptávka</h5>
+            <form id="contact-form" onsubmit="submitForm(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Jméno a příjmení *</label>
+                  <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Telefon *</label>
+                  <input type="tel" class="form-control" name="phone" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">Email *</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">O jakou službu máte zájem?</label>
+                  <select class="form-select" name="service">
+                    <option value="">-- Vyberte --</option>
+                    <option>Pravidelná údržba trávníku</option>
+                    <option>Regenerace trávníku</option>
+                    <option>Aerifikace PROFI</option>
+                    <option>Založení nového trávníku</option>
+                    <option>Kalibrace závlahy</option>
+                    <option>Konzultace na místě</option>
+                    <option>Jiné / nevím</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">Zpráva</label>
+                  <textarea class="form-control" name="message" rows="3" placeholder="Popište svou zahradu, rozlohu trávníku, aktuální stav..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-sena w-100">
+                    <i class="bi bi-send me-2"></i>Odeslat poptávku
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-success mt-3 d-none" id="form-ok">
+              <i class="bi bi-check-circle me-2"></i>Děkujeme! Ozveme se vám do 24 hodin.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="logo-text mb-2" style="color:#fff">ŠENA<span style="color:var(--green-mid)">PROFI</span></div>
+          <div style="font-size:.7rem;color:#666;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Trávníkový servis Brno</div>
+          <p class="small">Profesionální péče o trávníky v Brně a okolí. Franchíza celostátní sítě ŠENA PROFI.</p>
+        </div>
+        <div class="col-md-2">
+          <h6>Služby</h6>
+          <a href="#sluzby" class="d-block mb-1">Údržba</a>
+          <a href="#sluzby" class="d-block mb-1">Regenerace</a>
+          <a href="#sluzby" class="d-block mb-1">Aerifikace</a>
+          <a href="#sluzby" class="d-block mb-1">Zakládání</a>
+          <a href="#sluzby" class="d-block mb-1">Konzultace</a>
+        </div>
+        <div class="col-md-3">
+          <h6>Odkazy</h6>
+          <a href="https://www.sena.cz" target="_blank" class="d-block mb-1">ŠENA e-shop</a>
+          <a href="https://www.sena.cz/franziza-sena/" target="_blank" class="d-block mb-1">Franchíza ŠENA</a>
+          <a href="https://www.sena.cz/poradna/" target="_blank" class="d-block mb-1">Poradna</a>
+        </div>
+        <div class="col-md-3">
+          <h6>Kontakt</h6>
+          <p>
+            <i class="bi bi-telephone me-2"></i><a href="tel:+420608373637">+420 608 37 36 37</a><br>
+            <i class="bi bi-envelope me-2"></i><a href="mailto:brno@travnikovyservis.cz">brno@travnikovyservis.cz</a><br>
+            <i class="bi bi-globe me-2"></i><a href="https://www.travnikovyservis.cz">travnikovyservis.cz</a>
+          </p>
+        </div>
+      </div>
+      <div class="copy text-center small">
+        &copy; 2026 Trávníkový servis Brno – ŠENA PROFI. Všechna práva vyhrazena.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const t=document.querySelector(a.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        // Close mobile nav
+        const mob=document.getElementById('mobNav');
+        if(mob && mob.classList.contains('show')) bootstrap.Collapse.getInstance(mob)?.hide();
+      });
+    });
+
+    // Form submit (placeholder)
+    function submitForm(e){
+      e.preventDefault();
+      document.getElementById('form-ok').classList.remove('d-none');
+      e.target.reset();
+      setTimeout(()=>document.getElementById('form-ok').classList.add('d-none'),5000);
+    }
+  </script>
+</body>
+</html>
